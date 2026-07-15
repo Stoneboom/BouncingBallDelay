@@ -18,7 +18,7 @@ class Knob final : public juce::Component,
                    private juce::MouseListener
 {
 public:
-    Knob(juce::AudioProcessorValueTreeState& apvts, juce::String paramID, juce::String suffix, KnobImgStrip knobImgStrip, bool showValue);   // originally had float* parameter as an argument
+    Knob(juce::AudioProcessorValueTreeState& apvts, juce::String paramID, juce::String suffix, KnobImgStrip knobImgStrip, bool showValue = true, float mouseSensMultiplier = 1);   // originally had float* parameter as an argument
     void resized() override;
     void sliderValueChanged(juce::Slider* slider) override;
     void setValue(float newValue);

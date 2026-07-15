@@ -28,23 +28,20 @@ public:
     void resized() override;
 
 private:
-    //void mouseDrag(const juce::MouseEvent&) override;
-    //void mouseWheelMove(const juce::MouseEvent&, const juce::MouseWheelDetails&) override;
-
     BouncingBallAudioProcessor& audioProcessor;
 
-    Knob mixKnob{ audioProcessor.apvts, "mix", "%", Images::standardKnob, true};
-    Knob speedKnob{ audioProcessor.apvts, "speed", "%", Images::standardKnob, true };
-    Knob angleKnob{ audioProcessor.apvts, "angle", "dgs", Images::standardKnob, true };
-    Knob heightKnob{ audioProcessor.apvts, "height", "%", Images::standardKnob, true };
-    Knob dampingKnob{ audioProcessor.apvts, "damping", "%", Images::standardKnob, true };
-    Knob gravityKnob{ audioProcessor.apvts, "gravity", "%", Images::standardKnob, true };
-    Knob cutoffKnob{ audioProcessor.apvts, "cutoff", "Hz", Images::standardKnob, true };
-    Knob resonanceKnob{ audioProcessor.apvts, "resonance", "%", Images::standardKnob, true };
-    Knob filterTypeKnob{ audioProcessor.apvts, "filterType", "", Images::optionSlider, false };
-    Knob feedbackKnob{ audioProcessor.apvts, "feedback", "%", Images::standardKnob, true };
-    Knob panKnob{ audioProcessor.apvts, "pan", "%", Images::standardKnob, true };
-    Knob panTypeKnob{ audioProcessor.apvts, "panType", "", Images::optionSlider, false };
+    Knob mixKnob{ audioProcessor.apvts, "mix", "%", Images::standardKnob};
+    Knob speedKnob{ audioProcessor.apvts, "speed", "%", Images::standardKnob};
+    Knob angleKnob{ audioProcessor.apvts, "angle", "dgs", Images::standardKnob};
+    Knob heightKnob{ audioProcessor.apvts, "height", "%", Images::standardKnob};
+    Knob dampingKnob{ audioProcessor.apvts, "damping", "%", Images::standardKnob};
+    Knob gravityKnob{ audioProcessor.apvts, "gravity", "%", Images::standardKnob};
+    Knob cutoffKnob{ audioProcessor.apvts, "cutoff", "Hz", Images::standardKnob};
+    Knob resonanceKnob{ audioProcessor.apvts, "resonance", "%", Images::standardKnob};
+    Knob filterTypeKnob{ audioProcessor.apvts, "filterType", "", Images::optionSlider, false, 2};  // could have a seperate method for changing mouse drag sensitivity
+    Knob feedbackKnob{ audioProcessor.apvts, "feedback", "%", Images::standardKnob};
+    Knob panKnob{ audioProcessor.apvts, "pan", "%", Images::standardKnob};
+    Knob panTypeKnob{ audioProcessor.apvts, "panType", "", Images::optionSlider, false, 2};
 
     int testCounter = 0;
 

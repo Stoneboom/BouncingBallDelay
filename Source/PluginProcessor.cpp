@@ -348,14 +348,14 @@ juce::AudioProcessorValueTreeState::ParameterLayout BouncingBallAudioProcessor::
         "cutoff", "Cutoff", juce::NormalisableRange<float>(20.0f, 20000.0f, 1.0f, 0.25f), 1000.0f);
     auto resonance = std::make_unique<juce::AudioParameterFloat>(
         "resonance", "Resonance", 0.0f, 100.0f, 50.0f);
-    auto filterType = std::make_unique<juce::AudioParameterFloat>(
-        "filterType", "Filter Type", juce::NormalisableRange<float>(0.0f, 3.0f, 1.0f), 0.0f);
+    auto filterType = std::make_unique<juce::AudioParameterChoice>(
+        "filterType", "Filter Type", juce::StringArray{ "None", "LPF", "HPF", "BPF"}, 0);
     auto feedback = std::make_unique<juce::AudioParameterFloat>(
         "feedback", "Amount", 0.0f, 100.0f, 50.0f);
     auto pan = std::make_unique<juce::AudioParameterFloat>(
         "pan", "Pan", -100.0f, 100.0f, 0.0f);
-    auto panType = std::make_unique<juce::AudioParameterFloat>(
-        "panType", "Pan Type", juce::NormalisableRange<float>(0.0f, 1.0f, 1.0f), 0.0f);
+    auto panType = std::make_unique<juce::AudioParameterChoice>(
+        "panType", "Pan Type", juce::StringArray {"Fixed", "PingPong"}, 0);
 
     params.add(std::move(mix));
     params.add(std::move(speed));

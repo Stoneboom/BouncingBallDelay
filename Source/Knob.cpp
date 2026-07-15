@@ -10,12 +10,12 @@
 
 #include "Knob.h"
 
-Knob::Knob(juce::AudioProcessorValueTreeState& apvts, juce::String paramID, juce::String suffix, KnobImgStrip knobImgStrip, bool showValue) :  sliderAttachment(apvts, paramID, sliderComponent), 
-                                                                                                                                               valueComponent("value", "0"),   
-                                                                                                                                               suffix(suffix),
-                                                                                                                                               name(apvts.getParameter(paramID)->name),
-                                                                                                                                               nameComponent("name", "name"),
-                                                                                                                                               lookAndFeel(knobImgStrip.getImg(), knobImgStrip.getNumFrames())
+Knob::Knob(juce::AudioProcessorValueTreeState& apvts, juce::String paramID, juce::String suffix, KnobImgStrip knobImgStrip, bool showValue, float mouseSensMultiplier) :  sliderAttachment(apvts, paramID, sliderComponent), 
+                                                                                                                                                                          valueComponent("value", "0"),   
+                                                                                                                                                                          suffix(suffix),
+                                                                                                                                                                          name(apvts.getParameter(paramID)->name),
+                                                                                                                                                                          nameComponent("name", "name"),
+                                                                                                                                                                          lookAndFeel(knobImgStrip.getImg(), knobImgStrip.getNumFrames())
 {
     nameComponent.setJustificationType(juce::Justification::centred);
     nameComponent.setColour(juce::Label::textColourId, juce::Colours::black);
@@ -28,6 +28,7 @@ Knob::Knob(juce::AudioProcessorValueTreeState& apvts, juce::String paramID, juce
     valueComponent.setText(static_cast<juce::String>(int(sliderComponent.getValue()))+suffix, juce::NotificationType::dontSendNotification);
 
     sliderComponent.setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
+    sliderComponent.setMouseDragSensitivity(sliderComponent.getMouseDragSensitivity() / mouseSensMultiplier);
     sliderComponent.setLookAndFeel(&lookAndFeel);
     sliderComponent.setTextBoxStyle(juce::Slider::NoTextBox, false, 100, 20);
     sliderComponent.addListener(this);

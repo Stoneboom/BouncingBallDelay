@@ -9,5 +9,23 @@ Another key feature of Bouncing Ball is that the output of its filter for each d
 </p>
 
 ## Installation
+### VST3
  - Download 'BouncingBall.vst3.zip' from the most recent release in the 'Releases' tab
- - Unzip the file in your DAW's VST3 plugin folder (you may need to make a '/VST3' folder if it doesn't already exist)
+ - Unzip the file and place it in your VST3 plugin folder, the location of which should be:
+<p align="center">
+  C:\Program Files\Common Files\VST3
+</p>
+<p align="center">
+  (If this folder doesn't exist you can manually create it)
+</p>
+
+- Scan for the plugin in your DAW
+
+### AU (for MacOS)
+ - Download 'BouncingBall.component.zip' from the most recent release in the 'Releases' tab
+ - Unzip the file and place it in your AU plugin folder, the location of which should be:
+<p align="center">
+  /Library/Audio/Plug-Ins/Components
+</p>
+
+- Scan for the plugin in your DAW

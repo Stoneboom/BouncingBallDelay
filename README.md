@@ -1,6 +1,6 @@
 ## Overview
 Bouncing Ball is a delay plugin that uses a physics simulation of a ball bouncing around a room to generate a set of delay times.
-By altering the parameters of the simulation (gravity, wall damping, ball speed & angle), a variety of interesting rhythmic effects can be achieved.
+By altering the parameters of the simulation (gravity, wall damping, initial ball speed & angle), a variety of interesting rhythmic effects can be achieved.
 
 Another key feature of Bouncing Ball is that the output of its filter for each delay is fed to the subsequent delay, meaning sounds can develop into resonant ambient textures.
 
